@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from cardapio.models import CardapioCliente
-from cardapio.models import Usuario
+
 from cardapio.form import UsuarioForm
+from cardapio.models import CardapioCliente, Usuario
+
 
 def index_cadastro(request):
     cadastro = Usuario.objects.all()
@@ -10,4 +11,4 @@ def index_cadastro(request):
         if form.is_valid():
             form.save()
     form = UsuarioForm()
-    return render(request, 'cadastro.html', {"cadastro": cadastro, "form":form})
+    return render(request, 'cardapio/pages/cadastro.html', {"cadastro": cadastro, "form":form})
