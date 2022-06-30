@@ -11,4 +11,8 @@ def index_cadastro(request):
         if form.is_valid():
             form.save()
     form = UsuarioForm()
-    return render(request, 'cardapio/pages/cadastro.html', {"cadastro": cadastro, "form":form})
+    return render(request, 'cardapio/pages/home.html', {"cadastro": cadastro, "form": form})
+
+
+def index_login(request):
+    return render(request, 'cardapio/pages/home.html')

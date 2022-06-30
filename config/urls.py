@@ -20,4 +20,5 @@ from cardapio import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.index_cadastro, name="cadastro"),
+    path("index", views.index_login, name="login"),
 ]
